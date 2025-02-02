@@ -1,0 +1,31 @@
+{
+	"name": "fluid-md-editor",
+	"type": "module",
+	"version": "0.8.1",
+	"description": "A standalone Markdown editor that can render notes to PDF with differents themes, build with Astro, shine with Pico",
+	"scripts": {
+		"dev": "bunx --bun astro dev",
+		"start": "bunx --bun astro dev",
+		"build": "bunx --bun astro check && astro build",
+		"preview": "bunx --bun astro preview",
+		"astro": "bunx --bun astro",
+		"format": "bunx --bun prettier . --write"
+	},
+	"keywords": [
+		"astro",
+		"pico"
+	],
+	"dependencies": {
+		"@astrojs/check": "^0.9.4",
+		"@astrojs/solid-js": "^5.0.4",
+		"astro": "^5.2.3",
+		"astro-icon": "^1.1.5",
+		"easymde": "^2.18.0",
+		"solid-js": "^1.9.4",
+		"typescript": "^5.7.3"
+	},
+	"devDependencies": {
+		"prettier": "^3.4.2",
+		"prettier-plugin-astro": "^0.14.1"
+	}
+}

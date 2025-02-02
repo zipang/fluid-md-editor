@@ -1,0 +1,15 @@
+@use 
+
+:root {
+	--pico-font-family: Georgia, serif;
+	--pico-border-radius: 0;
+	--pico-typography-spacing-vertical: 0.5rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	--pico-typography-spacing-vertical: 1rem;
+}
