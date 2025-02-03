@@ -1,13 +1,10 @@
 ---
+import { PageWithPreview } from "@components/PageWithPreview";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
-const pageTitle: string = "AstroPico";
+const pageTitle: string = "Fluid Markdown Editor";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<main class="container">
-		<artile>
-			<textarea id="markdown-editor"></textarea>
-		</artile>
-	</main>
+	<PageWithPreview client:only />
 </BaseLayout>
