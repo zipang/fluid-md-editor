@@ -1,0 +1,24 @@
+article.container {
+    max-width: 980px;
+    padding: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    &.preview {
+        #markdown-editor {
+            display: none;
+        }
+        #preview {
+            display: block;
+        }
+    }
+
+    &.edit {
+        #markdown-editor {
+            display: block;
+        }
+        #preview {
+            display: none;
+        }
+    }
+}
