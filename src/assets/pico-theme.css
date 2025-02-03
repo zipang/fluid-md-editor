@@ -1,9 +1,11 @@
-@use 
+@use "pico";
 
 :root {
 	--pico-font-family: Georgia, serif;
+	--pico-font-size: 110%;
 	--pico-border-radius: 0;
 	--pico-typography-spacing-vertical: 0.5rem;
+	--pico-border-width: 0;
 }
 h1,
 h2,
