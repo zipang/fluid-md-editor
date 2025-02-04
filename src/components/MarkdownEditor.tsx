@@ -1,5 +1,6 @@
 import EasyMDE from "easymde";
-import { createEffect, createSignal } from "solid-js";
+import { createEffect, useContext } from "solid-js";
+import { PageContext } from "./PageWithPreview";
 import "easymde/dist/easymde.min.css";
 import "./markdown-editor.css";
 
@@ -24,22 +25,22 @@ const MDE_DEFAULT_OPTIONS = {
 
 export interface MarkdownEditorProps {
 	content: string;
+	visible: boolean;
 }
 
-export const MarkdownEditor = ({ content }: MarkdownEditorProps) => {
-	const [editor, setEditor] = createSignal<EasyMDE>();
+export const MarkdownEditor = ({ content = "" }: MarkdownEditorProps) => {
+	const { setEditor } = useContext(PageContext)!;
 
 	// Init
 	createEffect(() => {
-		setEditor(
-			new EasyMDE({
-				element: document.getElementById(
-					"markdown-editor",
-				) as HTMLElement,
-				...MDE_DEFAULT_OPTIONS,
-				initialValue: content,
-			}),
-		);
+		const editor = new EasyMDE({
+			element: document.getElementById("markdown-editor") as HTMLElement,
+			...MDE_DEFAULT_OPTIONS,
+			initialValue: content,
+		});
+		if (setEditor) {
+			setEditor(editor);
+		}
 	});
 
 	return <textarea id="markdown-editor" placeholder="Start writing..." />;

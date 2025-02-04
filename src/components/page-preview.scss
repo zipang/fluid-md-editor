@@ -1,8 +1,8 @@
 article.container {
-    max-width: 980px;
     padding: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 2rem auto;
+    max-width: 980px;
+    min-height: 100vh;
 
     &.preview {
         #markdown-editor {
