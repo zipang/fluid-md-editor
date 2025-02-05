@@ -29,7 +29,7 @@ export interface MarkdownEditorProps {
 }
 
 export const MarkdownEditor = ({ content = "" }: MarkdownEditorProps) => {
-	const { setEditor } = useContext(PageContext)!;
+	const { setEditor } = useContext(PageContext) || {};
 
 	// Init
 	createEffect(() => {
@@ -38,7 +38,9 @@ export const MarkdownEditor = ({ content = "" }: MarkdownEditorProps) => {
 			...MDE_DEFAULT_OPTIONS,
 			initialValue: content,
 		});
+
 		if (setEditor) {
+			console.log(`Sharing the editor instance with parent context`);
 			setEditor(editor);
 		}
 	});
