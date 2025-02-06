@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import solid from "@astrojs/solid-js";
 import pandaCSS from "@pandacss/dev/postcss";
+import dynamicImport from "vite-plugin-dynamic-import";
 
 // https://astro.build/config
 export default defineConfig({
@@ -46,6 +47,7 @@ export default defineConfig({
 				"@styled-system": "/styled-system",
 			},
 		},
+		plugins: [dynamicImport({})],
 		css: {
 			postcss: {
 				plugins: [pandaCSS],
