@@ -19,6 +19,7 @@ const MDE_DEFAULT_OPTIONS = {
 		code: "```",
 		italic: "_",
 	},
+	nativeSpellcheck: false,
 	theme: "easymde",
 	toolbar: false,
 };

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-
+import { Pencil } from "@components/icons";
 const pageTitle: string = "404";
 ---
 
@@ -12,7 +12,7 @@ const pageTitle: string = "404";
 					<h1>{pageTitle}</h1>
 					<p>Page Not Found</p>
 				</hgroup>
-				<p>Oops, it is dead end.</p>
+				<p>Oops, it is dead end. <Pencil size={24} /></p>
 			</div>
 		</section>
 		<section>
