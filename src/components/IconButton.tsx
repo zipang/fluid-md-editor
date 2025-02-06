@@ -1,37 +1,26 @@
 import { styled, type HTMLStyledProps } from "@styled-system/jsx";
-import { lazy, Suspense, type Component, type JSX } from "solid-js";
-
-const icons = {
-	"edit-pen": lazy(() => import("@components/icons/EditPen")),
-	"preview-eye": lazy(() => import("@components/icons/PreviewEye")),
-} as const;
+import { splitProps, type Component, type JSX } from "solid-js";
+import { Icon, type IconName } from "./icons";
 
 export interface IconButtonProps extends HTMLStyledProps<"button"> {
 	size?: number;
-	name: keyof typeof icons;
-	onClick: JSX.EventHandler<HTMLButtonElement, Event>;
+	name: IconName;
+	onClick?: JSX.EventHandler<HTMLButtonElement, Event>;
 }
 
 const StyledButton = styled.button;
 
-export const IconButton: Component<IconButtonProps> = ({
-	size = 32,
-	name = "edit-pen",
-	onClick,
-	...more
-}) => {
-	const Icon = icons[name];
+export const IconButton: Component<IconButtonProps> = (props) => {
+	const [_, etc] = splitProps(props, ["size", "name"]);
+
 	return (
 		<StyledButton
-			class="toolbar-button"
-			width={size}
-			height={size}
-			onClick={onClick}
-			{...more}
+			class={`toolbar-button ${props.name}`}
+			width={props.size}
+			height={props.size}
+			{...etc}
 		>
-			<Suspense fallback="X">
-				<Icon size={size} />
-			</Suspense>
+			<Icon name={props.name} size={props.size} />
 		</StyledButton>
 	);
 };
