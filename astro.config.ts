@@ -25,10 +25,6 @@ export default defineConfig({
 		// }),
 	],
 
-	experimental: {
-		svg: true,
-	},
-
 	image: {
 		domains: ["astro.build"],
 		remotePatterns: [
